@@ -1,5 +1,7 @@
 package com.example.common
 
+import com.example.common.ext.otherwise
+import com.example.common.ext.yes
 import org.junit.Test
 
 

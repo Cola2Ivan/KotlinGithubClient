@@ -25,6 +25,10 @@ abstract class BasePresenter<out V : IMvpView<BasePresenter<V>>> : IPresenter<V>
 
     }
 
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+
+    }
+
     override fun onDestory() {
 
     }

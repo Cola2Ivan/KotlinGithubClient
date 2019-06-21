@@ -40,6 +40,10 @@ abstract class BaseActivity <out P:BasePresenter<BaseActivity<P>>>:AppCompatActi
         presenter.onCreate(savedInstanceState)
     }
 
+    override fun onViewStateRestore(savedInstanceState: Bundle?) {
+
+    }
+
     override fun onSaveInstanceState(outState: Bundle){
         super.onSaveInstanceState(outState)
         presenter.onSaveInstanceState(outState)

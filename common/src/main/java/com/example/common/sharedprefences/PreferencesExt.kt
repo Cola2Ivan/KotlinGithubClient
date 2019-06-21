@@ -1,4 +1,4 @@
-package com.example.common
+package com.example.common.sharedprefences
 
 import android.content.Context
 import kotlin.properties.ReadWriteProperty
@@ -11,10 +11,11 @@ class Preference<T>(val context: Context, val name: String, val default: T, val 
         context.getSharedPreferences(prefName, Context.MODE_PRIVATE)
     }
 
-
     override fun getValue(thisRef: Any?, property: KProperty<*>): T {
-        return getPrefs(name)
+        return getPrefs(findProoerName(property))
     }
+
+    private fun findProoerName(property: KProperty<*> ) = if(name.isEmpty()) property.name else name
 
     private fun getPrefs(key: String):T{
         return with(prefs){
